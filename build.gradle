@@ -7,7 +7,7 @@ version = '1.0'
 
 jacoco {
     toolVersion = "0.7.9"
-    reportsDir = file("$buildDir/customJacocoReportDir")
+   // reportsDir = file("$buildDir/customJacocoReportDir")
 }
 
 jacocoTestReport {
@@ -41,7 +41,7 @@ sonarqube {
 
     dependencies {
         // This dependency is found on compile classpath of this component and consumers.
-        compile group: 'org.sonarsource.scanner.gradle', name: 'sonarqube-gradle-plugin', version: '2.5'
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5'
 
         // Use JUnit test framework
         testCompile 'junit:junit:4.12'
