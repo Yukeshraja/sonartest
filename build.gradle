@@ -19,8 +19,7 @@ jacocoTestReport {
 }
 sonarqube {
     properties {
-        property 'sonar.projectName', 'Example of SonarQube Scanner for Gradle Usage'
-        property "sonar.projectKey", "org.sonarqube:portalApp"
+        property 'sonar.projectName', 'SonarTest'
         property "sonar.sources", "src/main/java"
         property "sonar.sourceEncoding", "UTF-8"
         property "sonar.jacoco.coveragePlugin", "jacoco"
