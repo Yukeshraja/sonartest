@@ -5,12 +5,25 @@ plugins {
 description = 'Example of SonarQube Scanner for Gradle Usage'
 version = '1.0'
 
+acoco {
+    toolVersion = "0.7.9"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+jacocoTestReport {
+    reports {
+        csv.enabled false
+        xml.enabled true
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
 sonarqube {
     properties {
         property 'sonar.projectName', 'Example of SonarQube Scanner for Gradle Usage'
         property "sonar.projectKey", "org.sonarqube:portalApp"
         property "sonar.sources", "src/main/java"
         property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.jacoco.coveragePlugin", "jacoco"
         property "sonar.host.url", "http://192.168.91.49:9000"
     }
 
